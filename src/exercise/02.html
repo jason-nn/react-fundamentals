@@ -29,8 +29,15 @@
     // with these React API calls
     // 💰 The example in the markdown file should be a good hint for you.
 
-    const helloSpan = React.createElement('span', {children: 'Hello'})
-    const worldSpan = React.createElement('span', {children: 'World'})
+    const helloSpan = React.createElement('span', {
+      children: 'Hello',
+      key: 'hello',
+    })
+
+    const worldSpan = React.createElement('span', {
+      children: 'World',
+      key: 'world',
+    })
 
     const elementProps = {
       className: 'container',
