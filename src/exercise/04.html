@@ -18,19 +18,19 @@
     }
 
     const PropTypes = {
-      requiredString(props, propName, componentName) {
-        if (typeof props[propName] === 'undefined') {
-          return new Error(`${propName} is a required field`)
-        }
-        if (typeof props[propName] !== 'string') {
-          return new Error(`${propName} should be a string`)
+      string(props, propName, componentName) {
+        const type = typeof props[propName]
+        if (type !== 'string') {
+          return new Error(
+            `The component ${componentName} needs the prop ${propName} to be of type string but was passed a ${type}`,
+          )
         }
       },
     }
 
     Message.propTypes = {
-      greeting: PropTypes.requiredString,
-      subject: PropTypes.requiredString,
+      greeting: PropTypes.string,
+      subject: PropTypes.string,
     }
 
     // 🐨 use that function in place of the divs below with:
