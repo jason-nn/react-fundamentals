@@ -46,7 +46,11 @@ function UsernameForm({onSubmitUsername}) {
           onChange={handleChange}
         />
       </div>
-      {error ? <div role="alert">{error}</div> : null}
+      {error ? (
+        <div role="alert" style={{color: 'red'}}>
+          {error}
+        </div>
+      ) : null}
       <button type="submit" disabled={error}>
         Submit
       </button>
