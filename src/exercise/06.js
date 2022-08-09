@@ -22,7 +22,7 @@ function UsernameForm({onSubmitUsername}) {
 
   const handleSubmit = event => {
     event.preventDefault()
-    const username = event.target.elements[0].value
+    const username = event.target.elements.usernameInput.value
     onSubmitUsername(username)
   }
 
